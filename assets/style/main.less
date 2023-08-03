@@ -1,0 +1,223 @@
+@charset "utf-8";
+html,body{width:640px;height: 1039px;position: absolute;top: 0px;left: 0px;overflow: hidden;}
+.page{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width:100%;
+	height: 100%;
+	bottom: 0px;
+}
+
+.time{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -185px;
+	margin-left: -264px;
+	z-index: 201;
+}
+
+.timeMask{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	bottom: 0px;
+	background: #000;
+	opacity: .9;
+	z-index: 200;
+}
+
+
+.main{
+	background: url(../images/bg.jpg) no-repeat;
+
+	.wu{
+		position: absolute;
+		top: 140px;
+		left: -10px;
+
+		.wu1{
+			position: absolute;
+			top: 155px;
+			left: 10px;
+		}
+		.wu2{
+			position: absolute;
+			top: 195px;
+			left: 105px;
+		}
+		.wu3{
+			position: absolute;
+			top: 74px;
+			left: 50px;
+		}
+		.wu4{
+			position: absolute;
+			top: 213px;
+			left: 277px;
+		}
+		.wu5{
+			position: absolute;
+			top: 75px;
+			left: 90px;
+		}
+	}
+	.oil{
+		position: absolute;
+		top: 0px;
+		left: 218px;
+	}
+	.oil2{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		opacity: 0;
+	}
+	.oilBottle{
+		position: absolute;
+		top: 175px;
+		left: 320px;
+	}
+	.car{
+		position: absolute;
+		top: 415px;
+		left: 120px;
+	}
+	.oilText{
+		position: absolute;
+		top: 630px;
+		left: 53px;
+		opacity: 1;
+		.black1{
+			position: absolute;
+			top: -8px;
+			left: 187px;
+			.blackMove1;
+		}
+		.black2{
+			position: absolute;
+			top: 80px;
+			left: 255px;
+			.blackMove2;
+		}
+	}
+	.btnWrap{
+		position: absolute;
+		top: 800px;
+		left: 185px;
+		background: url(../images/btnBg.png) no-repeat;
+		width: 271px;
+		height: 148px;
+		.beginGame{
+			position: absolute;
+			top: 5px;
+			width: 270px;
+			height: 65px;
+		}
+		.rule{
+			position: absolute;
+			top: 78px;
+			width: 270px;
+			height: 65px;
+		}
+	}
+}
+.mask{
+	background: #000;
+	opacity: .6;
+	display: none;
+}
+
+.ruleText{
+	display: none;
+	position: absolute;
+	width: 540px;
+	height: 742px;
+	left: 50%;
+	margin-left: -270px;
+	top: 50%;
+	margin-top: -371px;
+	.ruleClose{
+		position: absolute;
+		bottom: 20px;
+		width: 100px;
+		height: 100px;
+		left: 208px;
+	}
+}
+
+.tips{
+	display: none;
+	position: absolute;
+	width: 528px;
+	height: 369px;
+	left: 50%;
+	margin-left: -264px;
+	top: 50%;
+	margin-top: -185px;
+	.goGame{
+		position: absolute;
+		bottom: 20px;
+		width: 100px;
+		height: 100px;
+		left: 214px;
+	}
+}
+
+
+.blackMove1{
+  animation: _blackMove1 5s linear infinite;
+  -webkit-animation: _blackMove1 5s linear infinite;
+}
+@keyframes _blackMove1 {
+  0% {
+    left: 187px;
+  }
+  50% {
+   	left: 243px;
+  }
+  100% {
+    left: 187px;
+  }
+}
+@-webkit-keyframes _blackMove1 {
+  0% {
+    left: 187px;
+  }
+  50% {
+   	left: 243px;
+  }
+  100% {
+    left: 187px;
+  }
+}
+
+.blackMove2{
+  animation: _blackMove2 5s linear infinite;
+  -webkit-animation: _blackMove2 5s linear infinite;
+}
+@keyframes _blackMove2 {
+  0% {
+    left: 255px;
+  }
+  50% {
+   	left: 231px;
+  }
+  100% {
+    left: 255px;
+  }
+}
+@-webkit-keyframes _blackMove2 {
+  0% {
+    left: 255px;
+  }
+  50% {
+   	left: 231px;
+  }
+  100% {
+    left: 255px;
+  }
+}

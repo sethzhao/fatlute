@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>油泥大战</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-touch-fullscreen" content="YES">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/PxLoaderSource.js"></script>
+    <script src="assets/js/defaultPlugin.js"></script>
+    <script src="assets/js/iscroll.js"></script>  
+    <script src="assets/js/TweenMax.min.js"></script>
+    <script src="assets/js/TimelineLite.min.js"></script>
+    <link type="text/css" href="assets/style/global.css" rel="stylesheet" />
+    <link type="text/css" href="assets/style/loading.css" rel="stylesheet" />
+    <link type="text/css" href="assets/style/main.css" rel="stylesheet" />
+    <script src="assets/js/main.js"></script>   
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?ef7ddf1da781b4206da921b5b46ddf84";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</head>
+<body>
+
+    <!-- loading -->
+    <div class="loadingLayout loadingMode">
+        <div class="count"></div>
+    </div>
+
+    <!-- 内容 -->
+    <div class="page main">
+        <div class="wu">
+            <img src="assets/images/wu.gif" alt="">
+            <div class="wu1"><img src="assets/images/wu1.gif" alt=""></div>
+            <div class="wu2"><img src="assets/images/wu2.gif" alt=""></div>
+            <div class="wu3"><img src="assets/images/wu3.gif" alt=""></div>
+            <div class="wu4"><img src="assets/images/wu4.gif" alt=""></div>
+            <div class="wu5"><img src="assets/images/wu5.gif" alt=""></div>
+        </div>
+        <div class="oil"><img src="assets/images/oil.png" alt=""></div>
+        <div class="oil2"><img src="assets/images/oil2.png" alt=""></div>
+        <div class="oilBottle"><img src="assets/images/oilBottle.png" alt=""></div>
+        <div class="car"><img src="assets/images/car.png" alt=""></div>
+        <div class="oilText">
+            <img src="assets/images/oilText.png" alt="">
+            <div class="black1"><img src="assets/images/black1.png" alt=""></div>
+            <div class="black2"><img src="assets/images/black2.png" alt=""></div>
+        </div>
+        <div class="btnWrap">
+            <a class="beginGame"></a>
+            <div class="rule"></div>
+        </div>
+    </div>
+
+    <div class="page mask"></div>
+    <div class="ruleText">
+        <img src="assets/images/ruleText.png" alt="">
+        <div class="ruleClose"></div>
+    </div>
+    <div class="tips">
+        <img src="assets/images/tips.png" alt="">
+        <a class="tips" href="./game.html"></a>
+    </div>
+</body>
+<script>
+    function getQueryString(name)               
+    {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+
+    var urlNum = getQueryString("_t");
+
+    var myDate = new Date();
+    var currentMonth = myDate.getMonth();       //获取当前月份(0-11,0代表1月)
+    var currentDate = myDate.getDate();        //获取当前日(1-31)
+
+    if((currentMonth < 4)||(urlNum==1))
+    {
+        $(".time,.timeMask").hide();
+    }
+
+    $(".beginGame").on("click",function(){
+        $(".mask,.tips").fadeIn();
+    });
+    $(".rule").on("click",function(){
+        $(".mask,.ruleText").fadeIn();
+    });
+    $(".ruleClose").on("click",function(){
+        $(".mask,.ruleText").fadeOut();
+    });
+
+    TweenMax.from($('.car'), 1.5, {delay:0,scale:.7,marginTop:-50,marginLeft:-100,ease:"linear"});
+    TweenMax.from($('.wu'), 1.2, {delay:0.3,scale:.8,marginTop:-50,marginLeft:-100,ease:"linear"});
+    TweenMax.from($('.oilBottle'), 1, {delay:.8,marginLeft:400,ease:"easeIn"});
+    TweenMax.from($('.oil'), 1, {delay:.8,marginLeft:400,ease:"easeIn"});
+    TweenMax.to($('.oil2'), .5, {delay:1.4,opacity:1,ease:"easeIn"});
+    TweenMax.from($('.oilText'), 1, {delay:1.8,marginTop:200,opacity:0,ease:"easeIn"});
+    TweenMax.from($('.btnWrap'), 1, {delay:2.7,opacity:0,ease:"easeIn"});
+
+    TweenMax.to($('.wu1'), 2.5, {delay:.5,marginTop:40,opacity:0,ease:"easeIn",repeat:-1});
+    TweenMax.to($('.wu2'), 2.8, {delay:1,marginTop:40,opacity:0,ease:"easeIn",repeat:-1});
+    TweenMax.to($('.wu3'), 2.5, {delay:1.5,marginTop:40,opacity:0,ease:"easeIn",repeat:-1});
+    TweenMax.to($('.wu4'), 2.5, {delay:2,marginTop:40,opacity:0,ease:"easeIn",repeat:-1});
+    TweenMax.to($('.wu5'), 2.5, {delay:2.5,marginTop:40,opacity:0,ease:"easeIn",repeat:-1});
+
+
+</script>
+<script>
+    $(".rule").on("click",function(){
+        _hmt.push(['_trackEvent', 'button', 'click', '游戏规则']);     
+    })
+
+    $(".ruleClose").on("click",function(){
+        _hmt.push(['_trackEvent', 'button', 'click', '关闭游戏规则']);     
+    })
+
+    $(".beginGame").on("click",function(){
+        _hmt.push(['_trackEvent', 'button', 'click', '开始游戏']);     
+    })
+
+    $(".tips").on("click",function(){
+        _hmt.push(['_trackEvent', 'button', 'click', 'go']);     
+    })
+</script>
+</html>
